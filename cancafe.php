@@ -11,7 +11,7 @@ if(!isset($_SESSION['username'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student's Home</title>
+    <title>Can Cafe</title>
     <link rel="stylesheet" href="style1.css">
     <script src="https://kit.fontawesome.com/b7a08da434.js" crossorigin="anonymous"></script>
      <!-- bootstrap core css -->
@@ -73,15 +73,17 @@ if(!isset($_SESSION['username'])){
              
               <div class="col-md-6">
                 <div class="img-box">
+                  <!-- <iframe width="455" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=455&amp;height=350&amp;hl=en&amp;q=CANARA%20ENGINEERING%20COLLEGE%20Mangalore+(can%20cafe%20)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='https://www.easybooking.eu/'>Hotelprogramm</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=535c112d38594a87e317750d2cdabfb09eebe543'></script> -->
                   <img style="border-radius: 10px; width:455px;height:350px" src="https://cdn.pixabay.com/photo/2023/07/12/20/40/ai-generated-8123329_1280.png"  alt="">
                 </div>
               </div>
                <div class="col-md-6">
                 <div class="detail-box">
-                 
-                  <h5 style="font-family: hedvig letters serif;font-size:2rem;font-weight:550;">
-                  Welcome to Can Cafe, where every cup tells a story. Nestled in the heart of MANGALORE, our charming cafe invites you to embark on a journey of flavors and relaxation. 
+                 <div class="box1">
+                  <h5 style="  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;font-size:2rem;font-weight:550;">
+                  Welcome to Can Cafe🍽️<br> Here every cup tells a story. Nestled in the heart of MANGALORE❤️, our charming cafe invites you to embark on a journey of flavors😋 and relaxation. 
                   </h5>
+                  </div>
                 </div>
               </div>
             </div>
@@ -210,9 +212,9 @@ if(!isset($_SESSION['username'])){
                   </h5>
                 </div>
                 <div class="social_box">
-                  <a href="">
+                  <!-- <a href="">
                     <img src="images/fb.png" alt="">
-                  </a>
+                  </a> -->
                   <a href="">
                     <img src="images/twitter.png" alt="">
                   </a>

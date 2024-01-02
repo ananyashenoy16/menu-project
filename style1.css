@@ -5,6 +5,36 @@
     list-style: none;
     font-family: cursive;
 }
+
+.box1 {
+    min-width: 400px;
+    max-height: 370px;
+    height: 300px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 35px 10px;
+    padding: 19px;
+    text-align: center;
+    background: transparent;
+    -webkit-box-shadow: 0px 0px 6px 0 rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    transition: 0.5s;
+}
 .popup{
     position: fixed;
     top: 5%;
@@ -581,7 +611,7 @@ footer
    
 }
 .price_section .price_container .box1:hover{
-    transform: translateY(-30px);
+    transform: scale(1.1);
 }
 .head{
 

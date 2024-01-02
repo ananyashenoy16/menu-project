@@ -1197,6 +1197,7 @@ a:focus {
 
 .info_section .info_container .info_contact {
   padding: 25px 10px 5px 10px;
+  text-align: center;
 }
 
 .info_section .info_container .info_contact a {

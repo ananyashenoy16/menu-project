@@ -14,7 +14,7 @@ if(!isset($_SESSION['username'])){
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-        <title>Student's Menu</title>
+        <title>Our Menu</title>
         <link rel="stylesheet" type="text/css"
             href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"
             />
@@ -63,7 +63,7 @@ if(!isset($_SESSION['username'])){
         </header>
      
         <section class="price_section layout_padding">
-          <center> <h1>Student's Menu</h1></center>
+          <center> <h1>Today's Special</h1></center>
         
             <div class="container">
                 <section class="main_menu">
@@ -532,9 +532,7 @@ if(!isset($_SESSION['username'])){
                                 </h5>
                             </div>
                             <div class="social_box">
-                                <a href="">
-                                    <img src="images/fb.png" alt="">
-                                </a>
+                            
                                 <a href="">
                                     <img src="images/twitter.png" alt="">
                                 </a>
