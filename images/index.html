@@ -1,0 +1,66 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])){
+    header('location:index.html');
+}
+
+ ?>  
+   
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://kit.fontawesome.com/b7a08da434.js" crossorigin="anonymous"></script>
+     <!-- bootstrap core css -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+      
+        <!-- fonts style -->
+        <link href="css/style.css" rel="stylesheet" />
+       
+        <!-- responsive style -->
+        <link href="css/responsive.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+</head>
+<body>
+      
+       
+      <header>
+       
+        <div class="bg-img">
+          <img src="https://cdn.pixabay.com/photo/2022/05/17/05/03/vegetable-gravy-7201669_1280.jpg"  class="we" alt="">
+        </div>
+        <nav class="navbar">
+          <div class="logo">
+              <a href="#"><img src="images/welcome1.png" alt="sushi"></a>
+          </div>
+          <div >
+              <ul id="myul" >
+                <a href="login.html"> <button class="mybutton">Register</button></a>
+                <a href="login.html"> <button class="mybutton">Log In</button></a>
+              </ul>
+          </div>
+
+          </div>
+            </div>
+       
+      </nav>
+    
+    <div class="text-box">
+          <h1>CAN</h1>
+          <h1 style="font-size:160px;">CAFE</h1>
+    </div>
+ 
+  </header>
+ 
+    
+    
+</body>
+<script>
+        
+       
+       
+   </script>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Membership</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://kit.fontawesome.com/b7a08da434.js" crossorigin="anonymous"></script>
+     <!-- bootstrap core css -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+      
+        <!-- fonts style -->
+        <link href="css/style.css" rel="stylesheet" />
+       
+        <!-- responsive style -->
+        <link href="css/responsive.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+</head>
+<body>
+      
+       
+      <header>
+       <div class="bg-img1" > 
+         <img src="https://cdn.pixabay.com/photo/2023/08/23/12/06/ai-generated-8208445_1280.png" class="background" alt="">
+       </div>
+       
+        <nav class="navbar">
+          <div class="logo">
+              <a href="#"><img src="images/welcome1.png" alt="sushi"></a>
+          </div>
+          <div class="nav-link" >
+              <ul id="myul" >
+                  <li class="cc" ><a href="cancafe.php">HOME</a></li>
+                  <li class="cc" ><a href="menu.php">MENU</a></li>
+                   <li class="cc" ><a href="smem.html">MEMBERSHIP</a></li>
+                  <li class="cc" ><a href="about.html">ABOUT</a></li>
+                  <a href="logout.php"> <button>LOG OUT</button></a>
+              </ul>
+          </div>
+          <img class="menup" src="images/Capturejk.PNG" alt="sushi">
+          </div>
+            </div>
+       
+      </nav>
+
+    </div>
+ 
+  </header>
+  <div class="offer">
+      <div style="margin:10px">
+        <span > Exiting Offers!!!</span>
+      </div>
+      <div class="offer-main">
+      <div class="offer1">
+        <h1 >&#8377;2199</h1>
+        <p >per 15 days</p>
+        <br>
+        <p >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis dolorem 
+            explicabo eaque corrupti corporis iure dicta nihil voluptatibus quidem, nesciunt
+             tempore libero eius ducimus ea. Voluptatum?</p>
+             <button  class="join">Join</button>
+     </div>
+     <div class="offer1">
+        <h1>&#8377;4099</h1>
+        <p>per Month</p>
+        <br>
+        <p >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis dolorem 
+            explicabo eaque corrupti corporis iure dicta nihil voluptatibus quidem, nesciunt
+             tempore libero eius ducimus ea. Voluptatum?</p>
+             <button  class="join">Join</button>
+     </div>
+     <div class="offer1">
+        <h1>&#8377;10,099</h1>
+        <p >per 3months</p>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis dolorem 
+            explicabo eaque corrupti corporis iure dicta nihil voluptatibus quidem, nesciunt
+             tempore libero eius ducimus ea. Voluptatum?</p>
+             <button  class="join">Join</button>
+     </div>
+    </div>
+  </div>
+  <footer>
+    <section class="info_section ">
+   
+          <div class="info_form">
+            <div class="d-flex justify-content-center">
+              <h5 class="info_heading">
+                FEEDBACK
+              </h5>
+            </div>
+            <form action="">
+              <div class="email_box">
+                <label for="email2">ENTER YOUR FEEDBACK HERE</label>
+                <input type="text" id="email2" required>
+              </div>
+              <div>
+                <button style="border:2px solid #fff;">
+                  SUBMIT
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="info_social">
+            <div class="d-flex justify-content-center">
+              <h5 class="info_heading">
+                Follow Us
+              </h5>
+            </div>
+            <div class="social_box">
+            
+              <a href="">
+                <img src="images/twitter.png" alt="">
+              </a>
+              <a href="">
+                <img src="images/linkedin.png" alt="">
+              </a>
+              <a href="">
+                <img src="images/insta.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- end info_section -->
+  
+    <!-- footer section -->
+    <section class="container-fluid footer_section">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved
+      </p>
+    </section>
+    </footer>
+  </body>
+  <script>
+    const menuHamburger = document.querySelector(".menup")
+    const navLink = document.querySelector(".nav-link")
+  
+    menuHamburger.addEventListener('click',()=>{
+    navLink.classList.toggle('menum');
+    });
+  </script>
+  </html>
