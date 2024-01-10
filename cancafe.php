@@ -34,18 +34,25 @@ if(!isset($_SESSION['username'])){
         </div>
         <nav class="navbar">
           <div class="logo">
-              <a href="#"><img src="images/welcome1.png" alt="sushi"></a>
+             <img src="images/welcome1.png" alt="">
           </div>
           <div class="nav-link" >
               <ul id="myul" >
                   <li class="cc" ><a href="cancafe.php">HOME</a></li>
                   <li class="cc" ><a href="menu.php">MENU</a></li>
                   <li class="cc" ><a href="smem.html">MEMBERSHIP</a></li>
-                  <li class="cc" ><a href="about.html">ABOUT</a></li>
+                  <li class="cc" ><a href="">ABOUT</a>
+                   <ul>
+                    <!-- <li><a href="">Personal ID</a></li> -->
+                    <li><a href="map.html
+                    ">Get Directions</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                   </ul></li>
+                   
                   <a href="logout.php"> <button>LOG OUT</button></a>
               </ul>
           </div>
-          <img class="menup" src="images/Capturejk.PNG" alt="sushi">
+          <img class="menup" src="images/menu1.png" alt="sushi">
           </div>
             </div>
        
@@ -73,7 +80,7 @@ if(!isset($_SESSION['username'])){
              
               <div class="col-md-6">
                 <div class="img-box">
-                  <!-- <iframe width="455" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=455&amp;height=350&amp;hl=en&amp;q=CANARA%20ENGINEERING%20COLLEGE%20Mangalore+(can%20cafe%20)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='https://www.easybooking.eu/'>Hotelprogramm</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=535c112d38594a87e317750d2cdabfb09eebe543'></script> -->
+                
                   <img style="border-radius: 10px; width:455px;height:350px" src="https://cdn.pixabay.com/photo/2023/07/12/20/40/ai-generated-8123329_1280.png"  alt="">
                 </div>
               </div>

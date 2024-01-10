@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $username=$_POST['username'];
     $password=$_POST['password'];
     $user_type=$_POST['user_type'];
-
+    // $email=$_POST['email'];
 
 
 // $sql="select * from `customers` where username='$username' and password='$password' and user_type='$user_type'";
@@ -21,35 +21,74 @@ $num=mysqli_num_rows($result);
         while($row=mysqli_fetch_assoc($result)){
             if(password_verify($password,$row['password'])){
               $login=1;
-              echo "Login Success";
+            //   echo "Login Success";
               $username=$row['username'];
               $user_type=$row['user_type'];
         
-              if($user_type=="student"){
+              if($user_type=="customer"){
                   $_SESSION['login_status']=true;
                   $_SESSION["username"]=$username;
                   $_SESSION["user_type"]=$user_type;
-          
-                  header("location:cancafe.php");
+                  
+                  ?>
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                    <script>
+
+                                window.location.href = "cancafe.php";
+                        
+                    
+                    </script>
+                    <?php
                }
-              else if($user_type=="teacher"){
+              else if($user_type=="member"){
                   $_SESSION['login_status']=true;
                   $_SESSION["username"]=$username;
                   $_SESSION["user_type"]=$user_type;
           
-                  header("location:teacher.php");
+                  ?>
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                    <script>
+
+                                window.location.href = "abc.php";
+                        
+                    
+                    </script>
+                    <?php
                 }
+                else if($user_type=="admin"){
+                    $_SESSION['login_status']=true;
+                    $_SESSION["username"]=$username;
+                    $_SESSION["user_type"]=$user_type;
+            
+                    ?>
+                      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                      <script>
+  
+                                  window.location.href = "admin.php";
+                          
+                      
+                      </script>
+                      <?php
+                  }
            }
     else
     {
        $invalid=1;
-    //    header('location:login.html');
-       echo "<script>
-        
-                   window.onload=function(){
-                     alert('password doesnt match');}
-                    </script>";
-                   
+   ?>
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            Swal.fire({
+                                title: "Oh no!",
+                                text: "Password doesn't match",
+                                icon: "error",
+                                confirmButtonText: "OK"
+                            }).then(function() {
+                                window.location.href = "login.html";
+                            });
+                        });
+                    </script>
+                    <?php
     }
  }
 }
@@ -57,11 +96,21 @@ $num=mysqli_num_rows($result);
     {
        //echo "invalid credentials";
        $invalid=1;
-       echo "<script>
-        
-                   window.onload=function(){
-                     alert('invalid credentials');}
-                    </script>";
+      ?>
+                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                            Swal.fire({
+                                // title: "!",
+                                text: "Invalid Credentials",
+                                icon: "error",
+                                confirmButtonText: "OK"
+                            }).then(function() {
+                                window.location.href = "login.html";
+                            });
+                        });
+                    </script>
+                    <?php
     }
 }
 }

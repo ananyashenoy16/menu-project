@@ -54,7 +54,13 @@ if(!isset($_SESSION['username'])){
                     <li class="cc" ><a href="cancafe.php">HOME</a></li>
                     <li class="cc" ><a href="menu.php">MENU</a></li>
                     <li class="cc" ><a href="smem.html">MEMBERSHIP</a></li>
-                    <li class="cc" ><a href="about.html">ABOUT</a></li>
+                    <li class="cc" ><a href="">ABOUT</a>
+                   <ul>
+                    <!-- <li><a href="">Personal ID</a></li> -->
+                    <li><a href="map.html
+                    ">Get Directions</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                   </ul></li>
                     <a href="logout.php"> <button>LOG OUT</button></a>
                     </ul>
                 </div>
@@ -77,7 +83,7 @@ if(!isset($_SESSION['username'])){
             <h2>Special Discount</h2>
             <h5>Monthly membership is just @4099.Join with us now and get 15% of for the next month!</h5>
             <input type="email" placeholder="email">
-          <button class="join"><a href="s-membership.html"style="color:#FFF">Buy membership</a> </button>
+          <button class="join"><a href="smem.html"style="color:#FFF">Buy membership</a> </button>
         </div>
         </div>
             <div class="heading_container">

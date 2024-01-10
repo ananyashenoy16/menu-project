@@ -19,11 +19,13 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <input type="text" placeholder="Username" name="username" required>
+                <input type="email" placeholder="email" name="email">
                 <input type="password" name="password" placeholder="Password" required>
                 <input type="password" placeholder="Re-type password" name="cpassword" required>
                 <select name="user_type" required>
-                    <option value="teacher">Teacher</option>
-                    <option value="student">Student</option>
+                    <option value="customer">customer</option>
+                    <!-- <option value="member">member</option> -->
+                    <option value="admin">admin</option>
                 </select></label>
                 <button>Sign Up</button>
             </form>
@@ -40,10 +42,11 @@
                 <input type="text" name="username" placeholder="Username" required="">
                 <input type="password" name="password" placeholder="Password" required="">
                 <select name="user_type" required>
-                    <option value="teacher">Teacher</option>
-                    <option value="student">Student</option>
+                    <option value="customer">customer</option>
+                    <option value="member">member</option>
+                    <option value="admin">admin</option>
                 </select></label>
-                <a href="#">Forgot your Password?</a>
+                <a href="forgot.php">Forgot your Password?</a>
                 <button>Login</button>
             </form>
         </div>

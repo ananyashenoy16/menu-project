@@ -5,7 +5,30 @@
     list-style: none;
     font-family: cursive;
 }
-
+/* ------------map----------- */
+.full{
+    height: 90vh;
+    margin:70px 30px 30px 30px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right{
+    position: relative;
+    float: right;
+    /* left: 100px; */
+    width: 50%;
+}
+.left{
+    float: left;
+    width: 50%;
+    padding: 0px;
+}
+.left h1{
+    font-size: 50px;
+    color: #ff4b2b;
+}
 .box1 {
     min-width: 400px;
     max-height: 370px;
@@ -103,7 +126,8 @@
     margin-top:100px;
     position: absolute;
     top: 10px;
-    left: 5%;
+    left: 3%;
+    padding: 0px;
 }
 .offer span{
     font-size: 40px;
@@ -151,7 +175,7 @@
  }
  .offer1{
     width: 370px;
-    height: 400px;
+    height: 350px;
     border: 1px solid #fff;
     border-radius: 10px;
     margin: 20px;
@@ -242,7 +266,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     margin-top: 100px;
     padding: 50px;
     display: flex;
-    height: 83vh;
+    height: 100vh;
     
  }
  .mylogo{
@@ -251,7 +275,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     width: 450px;
  }
  .ab-img{
-    background:url("https://cdn.pixabay.com/photo/2014/06/11/17/00/food-366875_1280.jpg");
+    background:url("images/abc.jpg");
     width: 100%;
     height: 120vh;
     background-size:cover; 
@@ -261,6 +285,30 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
  }
+ .navbar ul li :hover > ul{
+    opacity: 1;
+    visibility: visible;
+   }
+ .navbar ul ul{
+    position: absolute;
+    top: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    /* margin-top: 30px; */
+    display: flex;
+    flex-direction: column;
+   opacity: 0;
+   visibility: hidden;
+}
+
+.navbar ul ul li{
+    position: relative;
+    width: 110px;
+    display: list-item;
+}
+/* .navbar ul ul li:hover{ 
+    opacity: 1;
+ visibility: visible;
+} */
  @media screen and (max-width:900px) {
     .navbar{
         height: 100px;
@@ -689,6 +737,8 @@ border-radius: 10px;
 
     .navbar .menup {
         display: block;
+        width: 50px;
+        height: 50px;
     }
     .icons{
         width: 50px;
