@@ -1,117 +1,87 @@
 <?php
-$login=0;
-$invalid=0;
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+$login = 0;
+$invalid = 0;
 session_start();
-$_SESSION['login_status']=false;
+$_SESSION['login_status'] = false;
 
-if($_SERVER['REQUEST_METHOD']=='POST'){
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     include 'connect.php';
-    $username=$_POST['username'];
-    $password=$_POST['password'];
-    $user_type=$_POST['user_type'];
-    // $email=$_POST['email'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $user_type = $_POST['user_type'];
 
+    $sql = "SELECT * FROM `customers` WHERE username='$username' AND user_type='$user_type'";
+    $result = mysqli_query($con, $sql);
 
-// $sql="select * from `customers` where username='$username' and password='$password' and user_type='$user_type'";
-$sql="select * from `customers` where username='$username'and user_type='$user_type' ";
-$result=mysqli_query($con,$sql);
-if($result){
-$num=mysqli_num_rows($result);
-    if($num>0){
-        while($row=mysqli_fetch_assoc($result)){
-            if(password_verify($password,$row['password'])){
-              $login=1;
-            //   echo "Login Success";
-              $username=$row['username'];
-              $user_type=$row['user_type'];
-        
-              if($user_type=="customer"){
-                  $_SESSION['login_status']=true;
-                  $_SESSION["username"]=$username;
-                  $_SESSION["user_type"]=$user_type;
-                  
-                  ?>
-                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                    <script>
+    if (!$result) {
+        die("Query failed: " . mysqli_error($con));
+    }
 
-                                window.location.href = "cancafe.php";
-                        
-                    
-                    </script>
-                    <?php
-               }
-              else if($user_type=="member"){
-                  $_SESSION['login_status']=true;
-                  $_SESSION["username"]=$username;
-                  $_SESSION["user_type"]=$user_type;
-          
-                  ?>
-                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                    <script>
+    $num = mysqli_num_rows($result);
 
-                                window.location.href = "abc.php";
-                        
-                    
-                    </script>
-                    <?php
-                }
-                else if($user_type=="admin"){
-                    $_SESSION['login_status']=true;
-                    $_SESSION["username"]=$username;
-                    $_SESSION["user_type"]=$user_type;
+    if ($num > 0) {
+        $row = mysqli_fetch_assoc($result);
+
+        // Verify password
+        if (password_verify($password, $row['password'])) {
+            $login = 1;
+
+            // ... (your existing code)
+
+            if ($user_type == "member" && $row['status'] == "approved") {
+                $_SESSION['login_status'] = true;
+                $_SESSION["username"] = $username;
+                $_SESSION["user_type"] = $user_type;
+                $_SESSION["userid"] = $row['userid']; // Set the user ID in the session
+                header('Location:qrcode.php');
+                exit();
             
-                    ?>
-                      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                      <script>
-  
-                                  window.location.href = "admin.php";
-                          
-                      
-                      </script>
-                      <?php
-                  }
-           }
-    else
-    {
-       $invalid=1;
-   ?>
-                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            Swal.fire({
-                                title: "Oh no!",
-                                text: "Password doesn't match",
-                                icon: "error",
-                                confirmButtonText: "OK"
-                            }).then(function() {
-                                window.location.href = "login.html";
-                            });
-                        });
-                    </script>
-                    <?php
-    }
- }
-}
-    else
-    {
-       //echo "invalid credentials";
-       $invalid=1;
-      ?>
-                    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function() {
-                            Swal.fire({
-                                // title: "!",
-                                text: "Invalid Credentials",
-                                icon: "error",
-                                confirmButtonText: "OK"
-                            }).then(function() {
-                                window.location.href = "login.html";
-                            });
-                        });
-                    </script>
-                    <?php
-    }
-}
-}
 
+            } else if ($user_type == "member" && $row['status'] == "pending") {
+                echo '<script type="text/javascript">';
+                echo 'alert("Your account is still pending for approval!")';
+                echo 'window.location.href = "login.html"';
+                echo '</script>';
+            } else if ($user_type == "admin") {
+                $_SESSION['login_status'] = true;
+                $_SESSION["username"] = $username;
+                $_SESSION["user_type"] = $user_type;
+                header('location:admin.php');
+                exit(); // Ensure that the script stops after the header redirection
+            }
+        } else {
+            $invalid = 1;
+            echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+            echo '<script>';
+            echo 'document.addEventListener("DOMContentLoaded", function() {';
+            echo 'Swal.fire({';
+            echo 'title: "Oh no!",';
+            echo 'text: "Password doesn\'t match",';
+            echo 'icon: "error",';
+            echo 'confirmButtonText: "OK"';
+            echo '}).then(function() {';
+            echo 'window.location.href = "login.html";';
+            echo '});';
+            echo '});';
+            echo '</script>';
+        }
+    } else {
+        $invalid = 1;
+        echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+        echo '<script>';
+        echo 'document.addEventListener("DOMContentLoaded", function() {';
+        echo 'Swal.fire({';
+        echo 'text: "Invalid Credentials",';
+        echo 'icon: "error",';
+        echo 'confirmButtonText: "OK"';
+        echo '}).then(function() {';
+        echo 'window.location.href = "login.html";';
+        echo '});';
+        echo '});';
+        echo '</script>';
+    }
+}
+?>

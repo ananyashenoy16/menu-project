@@ -17,7 +17,6 @@
     <style>
         .reader{
             width: 500px;
-           
         }
         body{
            
@@ -38,18 +37,18 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-           <img src="images/welcome1.png" alt="">
+           <img src="images/navlogo.png" alt="">
         </div>
         <div class="nav-link" >
             <ul id="myul" >
               
-                <!-- <li class="cc" ><a href="admin.html">Scanner</a> -->
-                 <ul>
+              
+                 
                   <!-- <li><a href="">Personal ID</a></li> -->
-                  <li><a href="map.html
-                  ">Get Directions</a></li>
-                  <li><a href="about.html">About Us</a></li>
-                 </ul></li>
+                  <li><a href="admin.php
+                  ">Scanner</a></li>
+                  <li><a href="admin-approval.php">Member Approval</a></li>
+                </li>
                  
                 <a href="logout.php"> <button>LOG OUT</button></a>
             </ul>
@@ -78,28 +77,68 @@
                 document.addEventListener("DOMContentLoaded",fn)
             }
         }
+      
         domReady(function(){
             var myqr= document.getElementById("you-qr-reader");
             var lastResult,countResults =0;
-            function onScanSuccess(decodeText,decodeResult){
-                if(decodeText !== lastResult ){
-                    ++countResults;
-                    lastResult =decodeText;
-                    if(decodeText==='https://qrco.de/befqsw'){
-                        alert(" You QR is a member" );   
-                    }
-                    else{
-                    alert(" You QR is not a member");}
-                    <!-- myqr.innerHTML= ` you scan ${countResults} :${decodeText}` -->
+            function onScanSuccess(decodeText, decodeResult) {
+    if (decodeText !== lastResult) {
+        ++countResults;
+        lastResult = decodeText;
+
+        // Send AJAX request to check if the QR code is a member
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "check_qr.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var response = xhr.responseText;
+                if (response === 'true') {
+                    alert("You QR is a member");
+                } else {
+                    alert("You QR is not a member");
                 }
             }
+        };
+
+        var data = "decodeText=" + encodeURIComponent(decodeText);
+        xhr.send(data);
+    }
+}
+            
             var htmlscanner= new Html5QrcodeScanner(
                 "my-qr-reader",{fps:10 ,qrbox:250})
 
                 htmlscanner.render(onScanSuccess)
             
-        })
+        });
+    
+ 
     </script>
+     <?php
+        
+    //     $decodeText=decodeText;  
+    
+    
+    //   if($_SERVER['REQUEST_METHOD']=='POST'){
+    //       include 'connect.php';
+    //       $username=$_POST['username'];
+    //       $qrCodePath=$_POST['qrCodePath'];
+      
+      
+    //   $sql="select * from `customers` where username='$username' and qrCodePath='$decodeText'";
+    //   $result = mysqli_query($con, $sql);
+    //   if($result){
+    //     echo("user found");
+    //   }
+    //   else{
+    //     echo("not found");
+    //   }
+      
+              
+    //     }
+        ?>
     <script>
       const menuHamburger = document.querySelector(".menup")
       const navLink = document.querySelector(".nav-link")

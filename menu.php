@@ -1,10 +1,4 @@
-<?php
-session_start();
-if(!isset($_SESSION['username'])){
-    header('location:login.html');
-}
 
- ?>  
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,36 +30,31 @@ if(!isset($_SESSION['username'])){
     </head>
     <body>
         <header>
-            <nav class="navbar">
-                <div class="logo">
-                    <!-- <a href="#"><img src="images/navlogo.png" alt="sushi"></a> -->
-                    <div class="head">
-                <h1> 
-                <?php 
-                echo $_SESSION['username'];
-                ?>
-            </h1>
-        
-            </div>
-                </div>
-                <div class="nav-link">
-                    <ul>
-                    <i class="fa-solid fa-xmark close" style="color: #ffffff;" onclick=""></i>
-                    <li class="cc" ><a href="cancafe.php">HOME</a></li>
-                    <li class="cc" ><a href="menu.php">MENU</a></li>
-                    <li class="cc" ><a href="smem.html">MEMBERSHIP</a></li>
-                    <li class="cc" ><a href="">ABOUT</a>
-                   <ul>
-                    <!-- <li><a href="">Personal ID</a></li> -->
+        <nav class="navbar">
+          <div class="logo">
+             <img src="images/welcome1.png" alt="">
+          </div>
+          <div class="nav-link" >
+              <ul id="myul" >
+                  <li class="cc" ><a href="cancafe.php">HOME</a></li>
+                  <li class="cc" ><a href="menu.php">MENU</a></li>
+                  <li class="cc" ><a href="smem.html">MEMBERSHIP</a></li>
+                  <li class="cc showab" ><a href="">ABOUT</a>
+                   <ul class="showAbout">
                     <li><a href="map.html
                     ">Get Directions</a></li>
+                    
                     <li><a href="about.html">About Us</a></li>
                    </ul></li>
-                    <a href="logout.php"> <button>LOG OUT</button></a>
-                    </ul>
-                </div>
-                <img class="menup" src="images/Capturejk.PNG" alt="sushi">
-            </nav>
+                   
+                  <a href="login.html"> <button>Join as MEMBER</button></a>
+              </ul>
+          </div>
+          <img class="menup" src="images/menu1.png" alt="sushi">
+          </div>
+            </div>
+       
+      </nav>
         </header>
      
         <section class="price_section layout_padding">
@@ -82,7 +71,7 @@ if(!isset($_SESSION['username'])){
                 <h3>X</h3>
             <h2>Special Discount</h2>
             <h5>Monthly membership is just @4099.Join with us now and get 15% of for the next month!</h5>
-            <input type="email" placeholder="email">
+         
           <button class="join"><a href="smem.html"style="color:#FFF">Buy membership</a> </button>
         </div>
         </div>
@@ -519,11 +508,13 @@ if(!isset($_SESSION['username'])){
                                     FEEDBACK
                                 </h5>
                             </div>
-                            <form action="">
+                            <form action="https://formspree.io/f/moqgvdzy" method="POST">
                                 <div class="email_box">
-                                    <label for="email2">Enter Your Email</label>
-                                    <input type="text" id="email2">
-                                </div>
+                  <label for="feedback">EMAIL</label>
+                    <input type="email" id="email2" name="mail" required>
+                    <label for="feedback">ENTER YOUR FEEDBACK HERE</label>
+                    <input type="text" id="email2" name="feedback"required>
+                  </div>
                                 <div>
                                     <button  style="border:2px solid #fff;">
                                         Submit
@@ -574,16 +565,23 @@ if(!isset($_SESSION['username'])){
       
         // Update the filterSelection function to handle button clicks and change color
 
-        const popup=document.querySelector('.popup');
-      const x=document.querySelector('.popup h3');
-      window.addEventListener('load',()=>{
-        popup.classList.add('showPopup');
-        // popup.childNodes[1].classList.add('showPopup');
-      })
-      x.addEventListener('click',()=>{
+        // ... Your existing JavaScript code
+
+document.addEventListener('DOMContentLoaded', function () {
+    const popup = document.querySelector('.popup');
+    const closeButton = document.querySelector('.popup h3');
+
+    // Show the popup when the page loads
+    popup.classList.add('showPopup');
+
+    // Add an event listener to hide the popup when clicking the close button
+    closeButton.addEventListener('click', function () {
         popup.classList.remove('showPopup');
-         popup.childNodes[1].classList.remove('showPopup');
-      })
+    });
+});
+
+
+
     </script>
     </script>
 </html>

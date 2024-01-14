@@ -16,8 +16,8 @@
 }
 .right{
     position: relative;
-    float: right;
-    /* left: 100px; */
+    /* float: right; */
+    left: 100px;
     width: 50%;
 }
 .left{
@@ -58,25 +58,24 @@
     flex-grow: 1;
     transition: 0.5s;
 }
-.popup{
+/* -----popup------------ */
+.popup {
     position: fixed;
     top: 5%;
-    left: 10%;
+    left: -520px; /* Move the popup to the left, its width is 520px */
     width: 520px;
     height: 320px;
     box-shadow: 0 0 .5em rgba(0, 0, 0, 0.5);
     background: url(images/food.jpg);
     background-size: cover;
     display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transform: translateY(20%);
-  transition: 200ms ease-in-out opacity,
-              200ms ease-in-out transform;
-  pointer-events: all;
+    justify-content: center;
+    align-items: center;
+    transition: 200ms ease-in-out left; /* Change opacity to left */
+    pointer-events: all;
 }
-.popup input{
+
+.popup input {
     padding: 5px;
     width: 100%;
     border-radius: 10px;
@@ -84,43 +83,49 @@
     border: none;
     outline: none;
 }
-.popup button{
+
+.popup button {
     padding: 10px;
     width: 100%;
 }
-.popup h5{
+
+.popup h5 {
     margin-bottom: 20px;
 }
-.popup-content h2{
+
+.popup-content h2 {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 40px;
     font-weight: 500;
     margin-top: 10px;
     color: #fff;
 }
-.popup h3{
+
+.popup h3 {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
     user-select: none;
 }
-.popup-content{
-   background: rgba(0, 0, 0, 0.5);
-   width: 520px;
-   height:320px;
-   color: #fff;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   padding: 2rem;
+
+.popup-content {
+    background: rgba(0, 0, 0, 0.5);
+    width: 520px;
+    height: 320px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
 }
-.showPopup{
-  opacity: 1;
-  transform: translateY(20%);  
-  pointer-events: all;
+
+.showPopup {
+    left: 10%; /* Display the popup by moving it back to the original position */
+    pointer-events: all;
 }
+
 .offer{
     text-align: center;
     margin-top:100px;
@@ -156,6 +161,57 @@
       
    }
  }
+ /* --------loader------main----- */
+ .loader
+ {
+     position: relative;
+     -webkit-box-reflect: below -28px linear-gradient(transparent,#0002);
+ }
+ /* .loader::before
+ {
+     content: '';
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 2px;
+     height: 50%;
+     background-color: #03e9f4;
+     animation: blinkCursor 0.8s steps(3) infinite;
+ } */
+ @keyframes blinkCursor
+ {
+     0%,75%
+     {
+         opacity: 1;
+     }
+     76%,100%
+     {
+         opacity: 0;
+     }
+ }
+ .loader h3
+ {
+     position: relative;
+     color: #000;
+     letter-spacing: 5px;
+     font-size: 3em;
+     text-transform: uppercase;
+     animation: typing 8s steps(10) infinite;
+     overflow: hidden;
+ }
+ @keyframes typing
+ {
+     0%,90%,100%
+     {
+         width: 0;
+     }
+     30%,60%
+     {
+         width: 401.88px;
+     }
+ 
+ }
+/* --------------------------------------------- */
  .bg-img1{
     position: relative;
    
@@ -285,20 +341,32 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
  }
- .navbar ul li :hover > ul{
+ .nav-link ul li .cc:hover {
     opacity: 1;
     visibility: visible;
-   }
- .navbar ul ul{
+}
+
+.nav-link ul .showab:hover .showAbout {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-link ul .showAbout {
     position: absolute;
     top: 30px;
+    right: 0; /* Adjust as needed based on your layout */
     background: rgba(0, 0, 0, 0.5);
-    /* margin-top: 30px; */
     display: flex;
     flex-direction: column;
-   opacity: 0;
-   visibility: hidden;
+    opacity: 0; /* Initial state is hidden */
+    visibility: hidden;
+    z-index: 1; /* Ensure the dropdown is above other elements */
+    width: 200px; /* Adjust as needed based on your layout */
 }
+
+
+
+
 
 .navbar ul ul li{
     position: relative;
@@ -332,11 +400,10 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     }
     @media(max-width:500px){
         .we{
-            position: relative;
-            height: 100vh;
-            width: 50%;
-            background-repeat: repeat;
-            background-size: contain;
+           
+            background: url('images/bg_img.jpg');
+           
+            background-size: cover;
               
         }
         .ab-info{
@@ -345,7 +412,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
         .popup {
             position: fixed;
             top: 5%;
-            left: 10%;
+            left: -520px;
             width: 319px;
             height: 342px;
             box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
@@ -354,7 +421,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
             display: flex;
             justify-content: center;
             align-items: center;
-            opacity: 0;
+            
             transform: translateY(20%);
             z-index: 998;
             transition: 200ms ease-in-out opacity, 200ms ease-in-out transform;
@@ -372,7 +439,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
             padding: 2rem;
         }
         .showPopup {
-            opacity: 1;
+           left:5% ;
             transform: translateY(20%);
             pointer-events: all;
         }
@@ -401,7 +468,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
         }
         .bg-img1{
             background: #000;
-            height: 240vh;
+            height: 186vh;
         }
         .offer span{
             font-size: 42px;
@@ -419,6 +486,9 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
           .dd h2, .coffee {
             font-size: 20px;
         } 
+        .text-box{
+            margin-left: 29%;
+        }
     }
 
 header {
@@ -538,9 +608,10 @@ footer
     position: relative;
     height: 100vh;
     width: 100%;
+    background: url("https://cdn.pixabay.com/photo/2022/05/17/05/03/vegetable-gravy-7201669_1280.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-      
+     
 }
 
 .texts {

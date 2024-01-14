@@ -1,12 +1,4 @@
-<?php
-session_start();
-if(!isset($_SESSION['username'])){
-    header('location:login.html');
-}
-
- ?>  
-   
-   <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,7 +22,7 @@ if(!isset($_SESSION['username'])){
       <header>
         
         <div class="bg-img">
-          <img src="https://cdn.pixabay.com/photo/2022/05/17/05/03/vegetable-gravy-7201669_1280.jpg"  class="we" alt="">
+          <img  class="we" alt="">
         </div>
         <nav class="navbar">
           <div class="logo">
@@ -41,15 +33,15 @@ if(!isset($_SESSION['username'])){
                   <li class="cc" ><a href="cancafe.php">HOME</a></li>
                   <li class="cc" ><a href="menu.php">MENU</a></li>
                   <li class="cc" ><a href="smem.html">MEMBERSHIP</a></li>
-                  <li class="cc" ><a href="">ABOUT</a>
-                   <ul>
-                    <!-- <li><a href="">Personal ID</a></li> -->
+                  <li class="cc showab" ><a href="">ABOUT</a>
+                   <ul class="showAbout">
                     <li><a href="map.html
                     ">Get Directions</a></li>
+                    
                     <li><a href="about.html">About Us</a></li>
                    </ul></li>
                    
-                  <a href="logout.php"> <button>LOG OUT</button></a>
+                  <a href="login.html"> <button>Join as MEMBER</button></a>
               </ul>
           </div>
           <img class="menup" src="images/menu1.png" alt="sushi">
@@ -86,10 +78,11 @@ if(!isset($_SESSION['username'])){
               </div>
                <div class="col-md-6">
                 <div class="detail-box">
-                 <div class="box1">
-                  <h5 style="  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;font-size:2rem;font-weight:550;">
-                  Welcome to Can Cafe🍽️<br> Here every cup tells a story. Nestled in the heart of MANGALORE❤️, our charming cafe invites you to embark on a journey of flavors😋 and relaxation. 
-                  </h5>
+                 <div class="loader">
+                 <h3>Welcome!!!</h3>
+                  <h4>
+                 <br> Here every cup tells a story. Nestled in the heart of MANGALORE❤️, our charming cafe invites you to embark on a journey of flavors😋 and relaxation. 
+                  </h4>
                   </div>
                 </div>
               </div>
@@ -198,13 +191,15 @@ if(!isset($_SESSION['username'])){
                     FEEDBACK
                   </h5>
                 </div>
-                <form action="">
+                <form  action="https://formspree.io/f/moqgvdzy" method="POST">
                   <div class="email_box">
-                    <label for="email2">ENTER YOUR FEEDBACK HERE</label>
-                    <input type="text" id="email2" required>
+                  <label for="feedback">EMAIL</label>
+                    <input type="email" id="email2" name="mail" required>
+                    <label for="feedback">ENTER YOUR FEEDBACK HERE</label>
+                    <input type="text" id="email2" name="feedback"required>
                   </div>
                   <div>
-                    <button style="border:2px solid #fff;">
+                    <button style="border:2px solid #fff;" >
                       SUBMIT
                     </button>
                   </div>

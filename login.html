@@ -7,63 +7,71 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+   
 </head>
 <body>
     <div class="container" id="main">
         <div class="sign-up">
-            <form action="register.php" method="POST">
-                <h1>Create Account</h1>
-                <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-                </div>
-                <input type="text" placeholder="Username" name="username" required>
-                <input type="email" placeholder="email" name="email">
-                <input type="password" name="password" placeholder="Password" required>
-                <input type="password" placeholder="Re-type password" name="cpassword" required>
-                <select name="user_type" required>
-                    <option value="customer">customer</option>
-                    <!-- <option value="member">member</option> -->
-                    <option value="admin">admin</option>
-                </select></label>
-                <button>Sign Up</button>
-            </form>
-        </div>
-        <div class="sign-in">
             <form action="login.php" method="POST">
                 <h1>Login</h1>
                 <div class="social-container">
-                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <!-- <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
                     <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a> -->
                 </div>
                
                 <input type="text" name="username" placeholder="Username" required="">
                 <input type="password" name="password" placeholder="Password" required="">
                 <select name="user_type" required>
-                    <option value="customer">customer</option>
+                    <!-- <option value="customer">customer</option> -->
                     <option value="member">member</option>
                     <option value="admin">admin</option>
                 </select></label>
                 <a href="forgot.php">Forgot your Password?</a>
-                <button>Login</button>
+                <button name="login">Login</button>
             </form>
+        </div>
+        <div class="sign-in">
+            <form action="register.php" method="POST">
+                <h1>Join Membership</h1> <br>
+             
+                <input type="text" placeholder="Username" name="username" required>
+                <input type="email" placeholder="email" name="email">
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" placeholder="Re-type password" name="cpassword" required>
+                <input type="hidden" name="status" value="pending">
+                <input type="text" name="transaction" placeholder="transaction id" required>
+                <select name="user_type" required>
+                    <option value="member">member</option>
+                    <!-- <option value="member">member</option> -->
+                    <option value="admin">admin</option>
+                </select></label>
+                <button value="register">Sign Up</button>
+            </form>
+            
         </div>
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-left">
-                 <div class="overlay-body">
-                    <h1>Welcome Back!</h1>
-                    <p>Already a User? Login HERE</p>
-                    <button id="signIn">LOGIN</button>
+                 <div class="overlay-body show">
+                    <h1>Hello!</h1>
+                    <p>Want to be member of Cancafe? <br>Register for more</p>
+                    <button id="signIn">Register</button>
                 </div>
                 </div>
                 <div class="overlay-right">
-                    <div class="overlay-body">
-                    <h1>Hello!</h1>
-                    <p>New User? Enter your personal details and start journey with us</p>
-                    <button id="signUp">Sign Up</button>
+                    <button onclick="toggleQR()">payment QR</button>
+                    <div class="overlay-body" id="qrOverlay">
+                        <img src="https://imgs.search.brave.com/Tk-itLh4Avazn0HqXlOK2ALBDTFO3ZUvMGab4VWD_L4/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9xci1jb2RlXzg2/OTQyMy0xMDc3Lmpw/Zz9zaXplPTYyNiZl/eHQ9anBn" alt="QR Code" class="qr">
+                        <p>(Add the transaction id after payment)</p>
+                      
+                    </div>
+                    <h3>Already a Member? Login HERE</h3>
+                    <button id="signUp">LOGIN</button>
+                </div>
+                
+                      
+                   
                 </div>
             </div>
         </div>
@@ -87,6 +95,11 @@
             menuHamburger.addEventListener('click',()=>{
             navLink.classList.toggle('menum');
             })
+
+            function toggleQR() {
+                var overlayBody = document.getElementById("qrOverlay");
+                overlayBody.classList.toggle("show");
+            }
         </script>
    
 </body>
