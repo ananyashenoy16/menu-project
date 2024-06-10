@@ -1,7 +1,7 @@
 # Scan-Dine
 
 Welcome to Scan-Dine! Scan-Dine is a web application designed to enhance your dining experience by allowing you to scan QR codes to view restaurant menus, place orders, and enjoy a seamless dining experience.
-
+<img src="Screenshot 2024-06-10 041318.png" alt="mimg"/>
 ## Table of Contents
 
 - [Features](#features)
