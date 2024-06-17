@@ -460,7 +460,7 @@
                     <input style="width:100% ;" id="bil" type="text" class="billu" value="PRICE:">
                     <input  style="width:100% ;" id="total" type="text" class="billu" value="TOTAL:">
                     <button class="confi" onclick="Total()">calculate</button>
-                    <a href="https://rzp.io/l/uCHmkBxJ"><button class="confi"></button>Checkout</button></a>
+                    <a href="https://rzp.io/l/uCHmkBxJ"><button class="confi">Checkout</button></a>
                 </div>
             </div>
         </section>
