@@ -87,7 +87,7 @@ if (isset($_SESSION['login_status']) && $_SESSION['login_status'] === true) {
         echo '<h2>Your Details</h2>';
         echo '<p><strong>Username:</strong> ' . $row['username'] . '</p>';
         echo '<p><strong>Email:</strong> ' . $row['email'] . '</p>';
-        echo '<p><strong>Transaction ID:</strong> ' . $row['transaction'] . '</p>';
+        // echo '<p><strong>Transaction ID:</strong> ' . $row['transaction'] . '</p>';
 
         // Fetch the QR code filename for the logged-in user
         $qrCodeFilename = getQRCodeFilename($userid);

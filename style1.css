@@ -365,18 +365,15 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 
-
-
-
 .navbar ul ul li{
     position: relative;
     width: 110px;
     display: list-item;
 }
-/* .navbar ul ul li:hover{ 
-    opacity: 1;
- visibility: visible;
-} */
+.navbar .nav-link ul {
+    margin-top: 30px;
+    display: flex;
+}
  @media screen and (max-width:900px) {
     .navbar{
         height: 100px;
@@ -398,7 +395,66 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
         flex-direction: column;
     }
     }
-    @media(max-width:500px){
+  
+   
+      
+     
+        @media screen and (max-width: 500px) {
+            .navbar .nav-link ul {
+                margin-top: 0px;
+                margin-left: 22px;
+            }
+            .nav-link ul .showAbout a{
+                color: #ff4b2b;
+            }
+            .nav-link ul .showAbout li{
+                border: 1px solid #ff4b2b;
+                padding: 5px;
+                width: 150px;
+                border-radius: 10px;
+            }
+
+            .nav-link ul .showAbout {
+                position: relative;
+                left: 24px;
+                top: 0;
+               
+               
+                background:#fff;
+                display: flex;
+                flex-direction: column;
+                opacity: 1;
+                visibility: visible;
+                z-index: 1; /* Ensure the dropdown is above other elements */
+                width: 120px;
+                text-align: center;
+                margin: 0;
+               
+            }
+            .full {
+                flex-direction: column; /* Stack the elements vertically on small screens */
+                margin: 30px; /* Adjust margin for smaller screens */
+                padding: 20px; /* Adjust padding for smaller screens */
+            }
+        
+            .right {
+                position: relative;
+                left: 0; /* Reset the left position for smaller screens */
+                width: 100%; /* Take up the full width on smaller screens */
+            }
+        
+            .left {
+                margin-top: 150px;
+                float: none; /* Reset the float for smaller screens */
+                width: 100%; /* Take up the full width on smaller screens */
+            }
+        
+            .left h1 {
+                font-size: 40px; /* Adjust font size for smaller screens */
+            }
+        
+            /* Add more styles or adjustments as needed for smaller screens */
+        
         .we{
            
             background: url('images/bg_img.jpg');
@@ -553,10 +609,7 @@ footer
     flex-direction: column;
 }
 
-.navbar .nav-link ul {
-    margin-top: 30px;
-    display: flex;
-}
+
 
 .navbar .nav-link ul li {
     margin: 10px 25px;

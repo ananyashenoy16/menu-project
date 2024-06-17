@@ -47,7 +47,8 @@
                   <!-- <li><a href="">Personal ID</a></li> -->
                   <li><a href="admin.php
                   ">Scanner</a></li>
-                  <li><a href="admin-approval.php">Member Approval</a></li>
+                  <li><a href="admin-approval.php">Give Approval</a></li>
+                  <li><a href="approved-members.php">Approved Members </a></li>
                 </li>
                  
                 <a href="logout.php"> <button>LOG OUT</button></a>

@@ -10,6 +10,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $cpasssword=$_POST['cpassword'];
     $user_type=$_POST['user_type'];
     $email=$_POST['email'];
+    $package=$_POST['package'];
     $transaction=$_POST['transaction'];
 
 $sql="select * from `customers` where username='$username'";
@@ -36,7 +37,7 @@ if($result){
         
         if(($password==$cpasssword)){
         $hash= password_hash($password,PASSWORD_DEFAULT);
-        $sql="insert into `customers`(`username`,`password`,`user_type`,`email`,`transaction`) values('$username','$hash','$user_type','$email','$transaction')";
+        $sql="insert into `customers`(`username`,`password`,`user_type`,`email`,`transaction`,`package`) values('$username','$hash','$user_type','$email','$transaction','$package')";
         $result=mysqli_query($con,$sql);
         if($result){
                    // echo "<br> sign up successfull";

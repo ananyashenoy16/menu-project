@@ -40,7 +40,12 @@
                 <input type="password" name="password" placeholder="Password" required>
                 <input type="password" placeholder="Re-type password" name="cpassword" required>
                 <input type="hidden" name="status" value="pending">
-                <input type="text" name="transaction" placeholder="transaction id" required>
+                <select name="package" id="" required>
+                    <option value="2199">2199</option>
+                    <option value="4099">4099</option>
+                    <option value="10999">10099</option>
+                </select>
+                <input type="text" name="transaction" placeholder="transaction id (click GET PAYMENT QR)" required>
                 <select name="user_type" required>
                     <option value="member">member</option>
                     <!-- <option value="member">member</option> -->
@@ -60,9 +65,9 @@
                 </div>
                 </div>
                 <div class="overlay-right">
-                    <button onclick="toggleQR()">payment QR</button>
+                    <button onclick="toggleQR()"> Get payment QR</button>
                     <div class="overlay-body" id="qrOverlay">
-                        <img src="https://imgs.search.brave.com/Tk-itLh4Avazn0HqXlOK2ALBDTFO3ZUvMGab4VWD_L4/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9xci1jb2RlXzg2/OTQyMy0xMDc3Lmpw/Zz9zaXplPTYyNiZl/eHQ9anBn" alt="QR Code" class="qr">
+                        <img src="images/mygpayqr.jpg" alt="QR Code" class="qr">
                         <p>(Add the transaction id after payment)</p>
                       
                     </div>

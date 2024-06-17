@@ -63,7 +63,8 @@ include 'connect.php';
               <ul id="myul" >
               <li><a href="admin.php
                   ">Scanner</a></li>
-                  <li><a href="admin-approval.php">Member Approval</a></li>
+                  <li><a href="admin-approval.php">Give Approval</a></li>
+                  <li><a href="approved-members.php">Approved Members</a></li>
                 </li>
                    
                   <a href="logout.php"> <button>LOG OUT</button></a>
@@ -81,6 +82,7 @@ include 'connect.php';
                 <th>Username</th>
                 <th>Email</th>
                 <th>Transaction Id</th>
+                <th>package</th>
                 <th>Action</th>
             </tr>
 
@@ -95,6 +97,7 @@ include 'connect.php';
                 <td><?php echo $row['username']; ?></td>
                 <td><?php echo $row['email']; ?></td>
                 <td><?php echo $row['transaction']; ?></td>
+                <td><?php echo $row['package']; ?></td>
                 <td>
                     <form action="admin-approval.php" method="POST">
                         <input type="hidden" name="userid" value="<?php echo $row['userid']; ?>"/>

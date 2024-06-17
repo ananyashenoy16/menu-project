@@ -5,7 +5,7 @@ $token = $_POST["token"];
 $token_hash = hash("sha256", $token);
 
 // Include the connection file
-$con = require __DIR__ . "/connect.php";
+$con = require __DIR__ . "/database.php";
 
 $sql = "SELECT * FROM customers
         WHERE reset_token_hash = ?";
@@ -32,12 +32,12 @@ if ($_POST["password"] !== $_POST["password_confirmation"]) {
     die("Passwords must match");
 }
 
-$password = password_hash($_POST["password"],PASSWORD_DEFAULT);
+$password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 $sql = "UPDATE customers
         SET password = ?,
         reset_token_hash = NULL,
-            reset_token_expires_at= NULL
+        reset_token_expires_at= NULL
         WHERE userid = ?";
 
 $stmt = $con->prepare($sql);
@@ -46,6 +46,6 @@ $stmt->bind_param("ss", $password, $user["userid"]);
 
 $stmt->execute();
 
-header("Location:/menu-project/login.html");
+header("Location: /menu-project/login.html");
 exit;
 ?>

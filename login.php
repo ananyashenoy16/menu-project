@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $user_type = $_POST['user_type'];
-
+    // $package=$_POST['package'];
     $sql = "SELECT * FROM `customers` WHERE username='$username' AND user_type='$user_type'";
     $result = mysqli_query($con, $sql);
 
